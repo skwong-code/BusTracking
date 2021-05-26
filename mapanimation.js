@@ -1,54 +1,87 @@
-// This array contains the coordinates for all bus stops between MIT and Harvard
-const busStops = [
-  [-71.093729, 42.359244],
-  [-71.094915, 42.360175],
-  [-71.0958, 42.360698],
-  [-71.099558, 42.362953],
-  [-71.103476, 42.365248],
-  [-71.106067, 42.366806],
-  [-71.108717, 42.368355],
-  [-71.110799, 42.369192],
-  [-71.113095, 42.370218],
-  [-71.115476, 42.372085],
-  [-71.117585, 42.373016],
-  [-71.118625, 42.374863],
-];
-
-// TODO: add your own access token
+// code from: https://docs.mapbox.com/mapbox-gl-js/example/geojson-line/ 
+// add your own access token
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2t3b25nODMiLCJhIjoiY2tvbHNqN2F6MHEyejJwbzdoMWxwZzFhNiJ9.jorHl8yiNeUzDcAFwa_uRw';
 
 // This is the map instance
 let map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-71.104081, 42.365554],
-  zoom: 14,
+  center: [-71.08927333556, 42.350803759733076],
+  zoom: 13,
 });
 
-// TODO: add a marker to the map at the first coordinates in the array busStops. The marker variable should be named "marker"
+map.on('load', function () {
+  map.addSource('route', {
+    'type': 'geojson',
+    'data': {
+        'type': 'Feature',
+        'properties': {},
+        'geometry': {
+            'type': 'LineString', 
+        }
+    }
+  });
 
-var marker = new mapboxgl.Marker()
-.setLngLat(busStops[0])
-.addTo(map); 
+  map.addLayer({
+    'id': 'route',
+    'type': 'line',
+    'source': 'route',
+    'layout': {
+    
+    },
 
-// counter here represents the index of the current bus stop
-let counter = 0;
-function move() {
+  });
+});
   
-  // TODO: move the marker on the map every 1000ms. Use the function marker.setLngLat() to update the marker coordinates
-  // Use counter to access bus stops in the array busStops
-  // Make sure you call move() after you increment the counter.
 
-  marker.setLngLat(busStops[counter]);
-    counter++;
-   if(counter >= busStops.length){
-    counter = 0;
-    } 
-setTimeout(move, 1000);
+// This array contains the coordinates for all bus stops of route #1
+async function addBus(){
 
+    // get bus data
+    const locations = await getBusLocations();
+    console.log(new Date());
+    var buses = locations.length;
+
+    for (let i=0; i<= mapMarkers.length - 1; i++ ) {
+    mapMarkers[i].remove();
+    }
+    
+    mapMarkers = [];
+
+    for (let i = 0; i <= buses - 1; i++){
+    // locations.forEach(function(marker) {
+            if(locations[i].attributes.direction_id == 1){
+            // create a HTML element for each feature
+            var el = document.createElement('div');
+            el.className = 'inbound';
+    
+        // make a marker for each feature and add to the map
+        var newmarker = new mapboxgl.Marker(el)
+        .setLngLat([locations[i].attributes.longitude, locations[i].attributes.latitude]).addTo(map);
+        
+        mapMarkers.push(newmarker);
+        } else{
+        var el = document.createElement('div');
+        el.className = 'outbound';
+
+        // make a marker for each feature and add to the map
+        var newmarker = new mapboxgl.Marker(el)
+        .setLngLat([locations[i].attributes.longitude, locations[i].attributes.latitude]).addTo(map)
+    
+        mapMarkers.push(newmarker);
+        }
+    };
+    setTimeout(addBus, 15000);
 }
 
-// Do not edit code past this point
-if (typeof module !== 'undefined') {
-  module.exports = { move };
+// Request bus data from MBTA
+async function getBusLocations(){
+    const url = 'https://api-v3.mbta.com/vehicles';
+    const response = await fetch(url);
+    const json     = await response.json();
+    return json.data;
 }
+
+let mapMarkers = [];
+// fire the function
+addBus();
