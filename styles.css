@@ -5,7 +5,6 @@
   font-family: Segoe UI;
   width: 100%;
 }
-
 /* The nav bar */
 .navbar a {
   float: left;
@@ -15,13 +14,11 @@
   padding: 14px 16px;
   text-decoration: none;
 }
-
 /* The dropdown container */
 .dropdown {
   float: left;
   overflow: hidden;
 }
-
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
@@ -33,12 +30,10 @@
   font-family: inherit; /*Phone! looks wierd witout */
   margin: 0; /* Phone! looks wierd without */
 }
-
 /* highlight on drop down */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: rgba(62, 62, 141, 0.507);
 }
-
 /* Hide dropdown*/
 .dropdown-content {
   display: none;
@@ -48,7 +43,6 @@
   box-shadow: 0px 8px 16px 0px rgba(255, 0, 0, 0.2);
   z-index: 1;
 }
-
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
@@ -58,7 +52,6 @@
   display: block;
   text-align: left;
 }
-
 /* highlight on the dropdown */
 .dropdown-content a:hover {
   background-color:rgba(62, 62, 141, 0.507);
@@ -66,7 +59,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 /* header stuff */
 h1,h2,h3,h4,h5,h6{
   font-family:"Segoe UI",Arial,sans-serif;
@@ -74,9 +66,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 body {
-  margin: 0;
+  width: 99%;
   padding: 0;
-  width: 100%;
 }
 
 .map-overlay {
@@ -98,16 +89,14 @@ body {
   text-align: center;
 }
 
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-
+/* Map Stuff */
 #map {
   position: absolute;
   margin:auto;
-  top: 50px;
+  top: 60px;
   bottom: 150px;
-  width: 100%;
+  width: 97.8%;
   padding: 10px;
-  border: 3px solid #73AD21;
 }
 
 .inbound {
