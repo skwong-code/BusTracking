@@ -1,23 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<title>Bust Stop Tracker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
 
-<head>
-    <meta charset="utf-8" />
-    <title>Map Animation</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-    <link href="./styles.css" rel="stylesheet" />
-</head>
+<header>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="https://skwong-code.github.io/">Home</a>
+      <a href="#Biography">Biography</a>
+      <a href="#Contact">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Projects
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="https://skwong-code.github.io/PacMen/">PacMen Exercise</a>
+          <a href="https://skwong-code.github.io/EyesExercise/">Eye Exercise</a>
+          <a href="https://skwong-code.github.io/BusTracking/">Bus Tracking Exercise</a>
+        </div>
+      </div>
+    </div>  
+    </div>
+    </header>
 
 <body>
     <div id="map"></div>
-    <div class="map-overlay top">
+    <div class="map-overlay">
         <button style="font-size: 2em" onclick="move()">
             Show stops between MIT and Harvard
         </button>
     </div>
     <script src="./mapanimation.js"></script>
+
 </body>
+</html>
+<div class="bottom">
+<p>This is contious practice maniulation of the DOM
+<BR> 
+Some of the learning objective, including Asynchronous Program Techniques, 
+<BR>
+Fetching Data from Urls in the form of API, working with the DOM to add markers to the map.
+<BR>
+    Pressing the Button on top left corner "Show Stops Between MIT and Harvard" will show the marker at each bus stop and contiune on to Harvard.
+</p>
+ </div>
+
 
 </html>

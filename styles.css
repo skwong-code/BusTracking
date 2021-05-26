@@ -1,16 +1,120 @@
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Segoe UI;
+}
+
+/* The nav bar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /*Phone! looks wierd witout */
+  margin: 0; /* Phone! looks wierd without */
+}
+
+/* highlight on drop down */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(62, 62, 141, 0.507);
+}
+
+/* Hide dropdown*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(255, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* highlight on the dropdown */
+.dropdown-content a:hover {
+  background-color:rgba(62, 62, 141, 0.507);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* header stuff */
+h1,h2,h3,h4,h5,h6{
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-weight:400;margin:10px 0
+}
+
+.justify{
+  text-align:justify;
+}
+.wide{
+  letter-spacing:4px;
+}
+
+.opacity-max{
+  opacity:0.25;
+}
+.opacity-min{
+  opacity:0.75;
+}
+
+
 body {
   margin: 0;
   padding: 0;
 }
 #map {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  margin:auto;
+  top: 50px;
+  bottom: 150px;
   width: 100%;
+  padding: 10px;
+  border: 3px solid #73AD21;
 }
 
 .map-overlay {
   position: absolute;
   left: 0;
   padding: 10px;
+}
+
+.bottom {
+  position: fixed;
+  font-size:20px;
+  font-family:"Segoe UI";
+  left: 0;
+  bottom: 50px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
 }
