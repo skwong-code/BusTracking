@@ -1,4 +1,5 @@
 **Real Time Bus Tracking**
+
 Hello! This is another learning project, and the objective is to learn how an API requests is used and implemented.
 
 **Explanation**
@@ -14,6 +15,7 @@ Bus tracking is from Massachusetts Bay Transport Authority (MBTA)
 https://www.mbta.com/developers/v3-api
 
 **Future Improvements**
+
 At the current its is only tracking the area of Massachusetts near MIT and other Universities.  I would need to add a legend for what the colors of the bus means and a time or some sort of reference to times and where the bus should arrive.   
 
 **Support**
