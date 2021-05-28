@@ -93,7 +93,7 @@ body {
 #map {
   position: absolute;
   margin:auto;
-  top: 60px;
+  top: 100px;
   bottom: 150px;
   width: 97.8%;
   padding: 10px;
