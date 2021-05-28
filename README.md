@@ -14,6 +14,13 @@ https://www.mapbox.com/
 Bus tracking is from Massachusetts Bay Transport Authority (MBTA)
 https://www.mbta.com/developers/v3-api
 
+**How to Run**
+I have installed github pages, this project should run in the browser at this location:
+https://skwong-code.github.io/BusTracking/
+
+This page is apart of my portfolio page. 
+
+
 **Future Improvements**
 
 At the current its is only tracking the area of Massachusetts near MIT and other Universities.  I would need to add a legend for what the colors of the bus means and a time or some sort of reference to times and where the bus should arrive.   
